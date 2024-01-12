@@ -1,5 +1,9 @@
-Attribute VB_Name = "M骴ulo1"
+Attribute VB_Name = "M贸dulo1"
 Sub macroPruebas()
+
+    Dim tiempoInicio As Double
+    Dim tiempoFin As Double
+    Dim duracion As Double
 
     Dim diasGuardar As Integer, mesGuardar As Integer, yearGuardar As Integer
     Dim carpetaEntrada As String, carpetaSalida As String, datosEmpleados As String
@@ -7,6 +11,9 @@ Sub macroPruebas()
     ' Parte 2
     Dim ultimaFila As Integer, ultimaFilaPlantilla As Integer
     Dim plantilla As String, rutaPlantilla As String
+
+    ' Registra el tiempo de inicio
+    tiempoInicio = Timer
     
     diasGuardar = Day(Date)
     mesGuardar = Month(Date)
@@ -51,5 +58,14 @@ Sub macroPruebas()
         archivosDatosEmpleados = Dir()
     
     Loop
+
+    ' Registra el tiempo de finalizaci贸n
+    tiempoFin = Timer
+
+    ' Calcula la duraci贸n en segundos
+    duracion = tiempoFin - tiempoInicio
+
+    ' Muestra la duraci贸n en la ventana inmediata (puedes adaptarlo seg煤n tus necesidades)
+    Debug.Print "La duraci贸n de la ejecuci贸n fue de: " & duracion & " segundos"
 
 End Sub
